@@ -24,4 +24,21 @@
 13. winston: 日志
 14. express-winston: 基于 winston 的用于 express 的日志中间件
 
+## 部署
+- pm2  `npm install pm2 -g`
+ 
+修改 package.json，添加 start 的命令：
+```javascript
+"scripts": {
+  "start": "NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'myblog'"
+}
+```
+
+pm2 常用命令:
+
+1. pm2 start/stop: 启动/停止程序
+2. pm2 reload/restart [id|name]: 重启程序
+3. pm2 logs [id|name]: 查看日志
+4. pm2 l/list: 列出程序列表
+5. 更多命令请使用 pm2 -h 查看。
 *supervisor --harmony index 启动*
