@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+        }
+
+        *,
+        *:before,
+        *:after{
+            box-sizing: inherit;
+        }
+
+        #chat{
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .chat-header{
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+
+        .chat-send{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+
+        .chat-send textarea{
+            width: 100%;
+            height: 60px;
+            resize: none;
+        }
+
+        .chat-send .send{
+            float: right;
+            cursor: pointer;
+        }
+
+        .chat-send textarea{
+            padding: 10px;
+        }
+
+        .message{
+            position: absolute;
+            top: 50px;
+            bottom: 100px;
+            padding: 20px;
+        }
+
+        .message .mes-server,
+        .message .mes-user{
+            max-width: 60%;
+            margin: 15px;
+        }
+
+        .message .mes-server{
+            float: left;
+        }
+
+        .message .mes-user{
+            float: right;
+        }
+
+        .mes{
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .message .mes-user div{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat">
+    <header class="chat-header"></header>
+    <div class="message">
+        <div class="mes-user">
+            <div>name</div>
+            <div class="mes">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ducimus eos id magni neque
+                praesentium quisquam sapiente! Ab adipisci animi consectetur eaque id illo iure molestiae perferendis
+                quam reiciendis. Laudantium.
+            </div>
+        </div>
+        <div class="mes-server">
+            <div>name</div>
+            <div class="mes">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ducimus eos id magni neque
+                praesentium quisquam sapiente! Ab adipisci animi consectetur eaque id illo iure molestiae perferendis
+                quam reiciendis. Laudantium.
+            </div>
+        </div>
+    </div>
+    <footer class="chat-send">
+        <form>
+            <div><textarea>请输入消息</textarea></div>
+            <button class="send" type="button">send message</button>
+        </form>
+    </footer>
+</div>
+
+</body>
+</html>
