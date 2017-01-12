@@ -1,0 +1,21 @@
+{
+  "name": "dict",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "dict": "bin/index.js"
+  },
+  "author": "liuxing",
+  "license": "MIT",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "cli-table2": "^0.2.0",
+    "shelljs": "^0.7.6",
+    "superagent": "^3.3.2",
+    "yargs": "^6.6.0"
+  }
+}
