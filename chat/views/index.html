@@ -1,125 +1,40 @@
 <!doctype html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chat</title>
+    <title>chat</title>
     <style>
-        html,body{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            height: 100%;
-        }
-
-        *,
-        *:before,
-        *:after{
-            box-sizing: inherit;
-        }
-
-        #chat{
-            position: relative;
-            height: 100%;
-            overflow: hidden;
-            background-color: #eee;
-        }
-
-        .chat-header{
-            position: fixed;
-            width: 100%;
-            height: 50px;
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
-        }
-
-        .chat-send{
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 100px;
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
-        }
-
-        .chat-send textarea{
-            width: 100%;
-            height: 60px;
-            resize: none;
-        }
-
-        .chat-send .send{
-            float: right;
-            cursor: pointer;
-        }
-
-        .chat-send textarea{
-            padding: 10px;
-        }
-
-        .message{
-            position: absolute;
-            top: 50px;
-            bottom: 100px;
-            padding: 20px;
-        }
-
-        .message .mes-server,
-        .message .mes-user{
-            max-width: 60%;
-            margin: 15px;
-        }
-
-        .message .mes-server{
-            float: left;
-        }
-
-        .message .mes-user{
-            float: right;
-        }
-
-        .mes{
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .message .mes-user div{
-            float: right;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+        form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+        form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages li { padding: 5px 10px; }
+        #messages li:nth-child(odd) { background: #eee; }
     </style>
 </head>
 <body>
+<ul id="messages"></ul>
+<form action="">
+    <input id="mes" autocomplete="off" /><button>Send</button>
+</form>
 
-<div id="chat">
-    <header class="chat-header"></header>
-    <div class="message">
-        <div class="mes-user">
-            <div>name</div>
-            <div class="mes">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ducimus eos id magni neque
-                praesentium quisquam sapiente! Ab adipisci animi consectetur eaque id illo iure molestiae perferendis
-                quam reiciendis. Laudantium.
-            </div>
-        </div>
-        <div class="mes-server">
-            <div>name</div>
-            <div class="mes">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, ducimus eos id magni neque
-                praesentium quisquam sapiente! Ab adipisci animi consectetur eaque id illo iure molestiae perferendis
-                quam reiciendis. Laudantium.
-            </div>
-        </div>
-    </div>
-    <footer class="chat-send">
-        <form>
-            <div><textarea>请输入消息</textarea></div>
-            <button class="send" type="button">send message</button>
-        </form>
-    </footer>
-</div>
-
+<script src="//cdn.bootcss.com/socket.io/1.7.2/socket.io.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script>
+    let socket = io()
+    $('form').submit(function () {
+        socket.emit('chat message', $('#mes').val());
+        $('#mes').val('');
+        return false;
+    })
+    socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').text(msg))
+    });
+</script>
 </body>
 </html>
