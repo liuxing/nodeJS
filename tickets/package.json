@@ -2,14 +2,18 @@
   "name": "tickets",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tickets": "bin/index.js"
   },
   "author": "liuxing",
   "license": "ISC",
   "dependencies": {
     "cli-table2": "^0.2.0",
+    "commander": "^2.9.0",
     "superagent": "^3.3.2"
   }
 }
