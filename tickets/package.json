@@ -14,6 +14,7 @@
   "dependencies": {
     "cli-table2": "^0.2.0",
     "commander": "^2.9.0",
+    "moment": "^2.17.1",
     "superagent": "^3.3.2"
   }
 }

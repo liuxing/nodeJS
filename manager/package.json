@@ -1,6 +1,6 @@
 {
   "name": "manager",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "file manager\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[Cnode.js \u001b[C\u001b[C\u001b[C\u001bfile manager",
   "main": "index.js",
   "scripts": {
