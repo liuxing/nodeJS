@@ -1,0 +1,17 @@
+{
+  "name": "manager",
+  "version": "1.0.0",
+  "description": "file manager\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[Cnode.js \u001b[C\u001b[C\u001b[C\u001bfile manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "manager": "./bin/manager.js"
+  },
+  "author": "liuxing",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
